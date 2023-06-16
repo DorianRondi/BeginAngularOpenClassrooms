@@ -1,0 +1,10 @@
+<div class="face-snap-card">
+  <h2>{{ title }}</h2>
+  <q>Mis en ligne le {{ created_At }}</q>
+  <p>{{ description }}</p>
+  <p>
+    <button (click)="onSnapToggle()">{{ buttonSnap }}</button>
+    🤌 {{ snaps }}
+  </p>
+  <img [src]="imageURL" [alt]="title" width="400">
+</div>
