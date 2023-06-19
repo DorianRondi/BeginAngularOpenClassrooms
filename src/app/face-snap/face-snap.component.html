@@ -6,5 +6,6 @@
     🤌 {{ faceSnap.snaps }}
     <button (click)="onSnapToggle()">{{ buttonSnap }}</button>
   </p>
+  <p *ngIf="faceSnap.location">Lieu: {{ faceSnap.location }}</p>
   <img [src]="faceSnap.imageURL" [alt]="faceSnap.title">
 </div>
