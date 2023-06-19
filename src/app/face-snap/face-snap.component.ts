@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
   selector: 'face-snap',
   templateUrl: './face-snap.component.html',
   styleUrls: ['./face-snap.component.scss']
 })
-export class FaceSnapComponent {
+
+export class FaceSnapComponent implements OnInit {
+  @Input() faceSnap!: FaceSnap;
+
   title!: string;
   description!: string;
   created_At!: Date;
@@ -15,21 +21,20 @@ export class FaceSnapComponent {
   buttonSnap!: string;
 
   onSnapToggle(){
-    console.log (this.snaped);
     if(this.snaped){
       return this.addSnap();
     }
-    return this.leftSnap();
+    return this.removeSnap();
   }
 
   addSnap() {
-    this.snaps++;
+    this.faceSnap.snaps++;
     this.snaped = false;
     this.buttonSnap = "Snap!";
   }
 
-  leftSnap(){
-    this.snaps--;
+  removeSnap(){
+    this.faceSnap.snaps--;
     this.snaped = true;
     this.buttonSnap = "Unsnap!";
   }
@@ -37,10 +42,5 @@ export class FaceSnapComponent {
   ngOnInit() {
     this.snaped = true;
     this.buttonSnap = "Snap!";
-    this.title = 'Archibald';
-    this.description = 'Mon meilleur ami depuis tout petit !';
-    this.created_At = new Date();
-    this.snaps = 6;
-    this.imageURL = 'https://source.unsplash.com/random/100×200/?snowboard';
   }
 }
