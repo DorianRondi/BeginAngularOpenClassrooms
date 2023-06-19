@@ -20,23 +20,26 @@ export class FaceSnapComponent implements OnInit {
   snaped! : boolean;
   buttonSnap!: string;
 
+  /*
   onSnapToggle(){
     if(this.snaped){
       return this.addSnap();
     }
     return this.removeSnap();
   }
+  */
+  onSnapToggle(){return this.addSnap();}
 
   addSnap() {
     this.faceSnap.snaps++;
     this.snaped = false;
-    this.buttonSnap = "Snap!";
+    this.buttonSnap = "unSnap!";
   }
 
   removeSnap(){
     this.faceSnap.snaps--;
     this.snaped = true;
-    this.buttonSnap = "Unsnap!";
+    this.buttonSnap = "Snap!";
   }
 
   ngOnInit() {

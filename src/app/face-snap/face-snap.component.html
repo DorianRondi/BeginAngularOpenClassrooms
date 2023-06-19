@@ -1,11 +1,9 @@
-<div class="face-snap-card">
+<div class="card height mx-2 text-center mt-5 p-5">
   <h2>{{ faceSnap.title }}</h2>
-  <p>Mis en ligne le {{ faceSnap.created_At }}</p>
+  <p>Mis en ligne le {{ faceSnap.created_At | date }}</p>
   <p>{{ faceSnap.description }}</p>
-  <p>
-    🤌 {{ faceSnap.snaps }}
-    <button (click)="onSnapToggle()">{{ buttonSnap }}</button>
-  </p>
   <p *ngIf="faceSnap.location">Lieu: {{ faceSnap.location }}</p>
-  <img [src]="faceSnap.imageURL" [alt]="faceSnap.title">
+  <p><span [ngStyle]="{ color: 'rgb('+ (255-(faceSnap.snaps*10)) +', '+ faceSnap.snaps*10 +', 0)' }">🤌 {{ faceSnap.snaps }}</span></p>
+  <button class="btn btn-primary" (click)="onSnapToggle()">{{ buttonSnap }}</button>
+  <img [src]="faceSnap.imageURL" [alt]="faceSnap.title" class="mt-2">
 </div>
