@@ -1,7 +1,7 @@
 <div class="card height mx-2 text-center mt-5 p-5" [ngClass]="{snapped : snapped === false}">
   <h2>{{ faceSnap.title | uppercase  }}</h2>
   <p>{{ 0.336 | percent: '1.0-1' }}</p>
-  <p>{{ 344.36 | currency }}</p>
+  <p>{{ 344.36 | currency: 'EUR' : 'code' }}</p>
   <p>{{ 4346234.36 | number: '1.0-2' }}</p>
   <p>Mis en ligne le {{ faceSnap.created_At | date: 'à HH:mm, le d MMMM yyyy' }}</p>
   <p>{{ faceSnap.description }}</p>
