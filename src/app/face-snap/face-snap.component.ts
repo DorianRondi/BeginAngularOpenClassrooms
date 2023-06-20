@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
+import { FaceSnapService } from '../service/face-snaps.service';
 
 @Component({
   selector: 'face-snap',
@@ -10,6 +11,7 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 
 export class FaceSnapComponent implements OnInit {
+  [x: string]: any;
   @Input() faceSnap!: FaceSnap;
 
   title!: string;
@@ -20,27 +22,18 @@ export class FaceSnapComponent implements OnInit {
   snapped! : boolean;
   buttonSnap!: string;
 
-  onSnapToggle(){
-    if(this.snapped){
-      return this.addSnap();
+  constructor(private faceSnapsService: FaceSnapService) {}
+
+  onSnapToggle(): void {
+    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, this.buttonSnap);
+    if(this.buttonSnap == "Snap!"){
+      this.buttonSnap = "unSnap!";
+    }else{
+      this.buttonSnap = "Snap!";
     }
-    return this.removeSnap();
   }
 
-  addSnap() {
-    this.faceSnap.snaps++;
-    this.snapped = false;
-    this.buttonSnap = "unSnap!";
-  }
-
-  removeSnap(){
-    this.faceSnap.snaps--;
-    this.snapped = true;
-    this.buttonSnap = "Snap!";
-  }
-
-  ngOnInit() {
-    this.snapped = true;
+  ngOnInit(): void {
     this.buttonSnap = "Snap!";
   }
 }
