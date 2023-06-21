@@ -1,1 +1,39 @@
-<a routerLink="" class="text-decoration-none"><h1 class="bg-black text-white text-center fw-bold py-5">FaceSnap</h1></a>
+<header class="bg-black">
+  <div class="container pb-0 pt-5">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 text-center">
+        <a routerLink="" class="text-decoration-none text-white">
+          <h1 class="text-center fw-bold">
+            SnapFace
+          </h1>
+        </a>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+  <nav class="container pb-3 pt-0">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <nav class="d-flex justify-content-evenly">
+          <li>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="text-decoration-none text-info-emphasis pt-0">
+              <p>
+                home
+              </p>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/facesnaps" routerLinkActive="active" class="text-decoration-none text-info-emphasis pt-0">
+              <p>
+                FaceSnaps
+              </p>
+            </a>
+          </li>
+        </nav>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </nav>
+</header>
