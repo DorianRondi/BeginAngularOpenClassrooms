@@ -8,6 +8,18 @@
     </div>
     <div class="col-4"></div>
   </div>
+  <div class="row pt-5">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <form class="text-center" #subscribeForm="ngForm" (ngSubmit)="onSubmitForm(subscribeForm)">
+        <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
+        <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail" class="w-75">
+        <button type="submit" class="w-25">OK!</button>
+
+        <p>{{ userEmail }}</p>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!--

@@ -14,23 +14,23 @@ export class FaceSnapListComponent implements OnInit{
 
   snaps!: FaceSnap[];
 
-  private destroy$!: Subject<boolean>;
+  //private destroy$!: Subject<boolean>;
 
   constructor(private FaceSnapService: FaceSnapService){}
 
   ngOnInit() {
-    this.destroy$ = new Subject<boolean>();
+    this.snaps = this.FaceSnapService.getAllFaceSnaps();
 
+    //this.destroy$ = new Subject<boolean>();
+
+    /*
     interval(1000).pipe(
     tap(console.log),
     takeUntil(this.destroy$)
     ).subscribe();
-
-    this.snaps = this.FaceSnapService.getAllFaceSnaps();
+    */
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next(true);
-}
+  //ngOnDestroy(): void { this.destroy$.next(true); }
 
 }
