@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-4">
+      <div class="card height mx-2 text-center mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
+        <h2>{{ faceSnap.title | uppercase }}</h2>
+        <p>Mis en ligne le {{ faceSnap.created_At | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+        <p>{{ faceSnap.description }}</p>
+        <p *ngIf="faceSnap.location">Lieu: {{ faceSnap.location }}</p>
+        <p>
+          <span [ngStyle]="{ color: 'rgb('+ (255-(faceSnap.snaps*10)) +', '+ faceSnap.snaps*10 +', 0)' }">
+            🤌 {{ faceSnap.snaps }}
+          </span>
+        </p>
+        <button class="btn btn-primary mb-1" (click)="onShowFaceSnaps()">Back to list</button>
+        <button class="btn btn-primary" (click)="onSnapToggle()">{{ faceSnap.buttonSnap }}</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card height mx-2 text-center mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
+        <img [src]="faceSnap.imageURL" [alt]="faceSnap.title"  class="img-fluid border border-5 rounded">
+      </div>
+    </div>
+  </div>
+</div>

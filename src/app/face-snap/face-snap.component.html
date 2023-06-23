@@ -1,14 +1,8 @@
-<div class="card height mx-2 text-center mt-5 p-5" [ngClass]="{snapped : buttonSnap === 'unSnap!'}">
-  <h2>{{ faceSnap.title | uppercase  }}</h2>
-  <p>{{ 0.336 | percent: '1.0-1' }}</p>
-  <p>{{ 344.36 | currency: 'EUR' : 'code' }}</p>
-  <p>{{ 4346234.36 | number: '1.0-2' }}</p>
-  <p>Mis en ligne le {{ faceSnap.created_At | date: 'à HH:mm, le d MMMM yyyy' }}</p>
-  <p>{{ faceSnap.description }}</p>
-
-  <!--<p *ngIf="faceSnap.location">Lieu: {{ faceSnap.location }}</p>-->
-
-  <p><span [ngStyle]="{ color: 'rgb('+ (255-(faceSnap.snaps*10)) +', '+ faceSnap.snaps*10 +', 0)' }">🤌 {{ faceSnap.snaps }}</span></p>
-  <button class="btn btn-primary" (click)="onSnapToggle()">{{ buttonSnap }}</button>
-  <img [src]="faceSnap.imageURL" [alt]="faceSnap.title" class="mt-2">
+<div class="card height mx-2 text-center mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
+  <h2 class="h4">{{ faceSnap.title | uppercase }}</h2>
+  <button class="btn btn-primary mb-1" (click)="onViewSnap()">Show</button>
+  <button class="btn btn-primary mb-2" (click)="onSnapToggle()">{{ faceSnap.buttonSnap }}</button>
+  <a routerLink="{{ faceSnap.id }}">
+    <img [src]="faceSnap.imageURL" [alt]="faceSnap.title" class="img-fluid border border-5 rounded">
+  </a>
 </div>

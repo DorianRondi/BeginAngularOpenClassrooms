@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapService } from '../service/face-snaps.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'face-snap',
@@ -11,7 +10,7 @@ import { FaceSnapService } from '../service/face-snaps.service';
 })
 
 export class FaceSnapComponent implements OnInit {
-  [x: string]: any;
+
   @Input() faceSnap!: FaceSnap;
 
   title!: string;
@@ -19,21 +18,24 @@ export class FaceSnapComponent implements OnInit {
   created_At!: Date;
   snaps!: number;
   imageURL!: string;
-  snapped! : boolean;
   buttonSnap!: string;
 
-  constructor(private faceSnapsService: FaceSnapService) {}
+  constructor(private faceSnapsService: FaceSnapService, private router: Router) {}
 
   onSnapToggle(): void {
-    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, this.buttonSnap);
-    if(this.buttonSnap == "Snap!"){
-      this.buttonSnap = "unSnap!";
+    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, this.faceSnap.buttonSnap);
+    if(this.faceSnap.buttonSnap == "Snap!"){
+      this.faceSnap.buttonSnap = "unSnap!";
     }else{
-      this.buttonSnap = "Snap!";
+      this.faceSnap.buttonSnap = "Snap!";
     }
   }
 
+  onViewSnap(): void{
+    /*this.router.navigateByUrl('facesnaps/'+this.faceSnap.id);*/
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
+  }
+
   ngOnInit(): void {
-    this.buttonSnap = "Snap!";
   }
 }

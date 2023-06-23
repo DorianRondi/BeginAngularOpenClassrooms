@@ -7,7 +7,9 @@ import { FaceSnapService } from '../service/face-snaps.service';
   templateUrl: './face-snap-list.component.html',
   styleUrls: ['./face-snap-list.component.scss']
 })
+
 export class FaceSnapListComponent implements OnInit{
+
   snaps!: FaceSnap[];
 
   constructor(private FaceSnapService: FaceSnapService){}

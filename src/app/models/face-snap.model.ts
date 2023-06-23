@@ -5,5 +5,6 @@ export class FaceSnap {
     created_At!: Date;
     snaps!: number;
     imageURL!: string;
+    buttonSnap!: string;
     location?: string;
 }

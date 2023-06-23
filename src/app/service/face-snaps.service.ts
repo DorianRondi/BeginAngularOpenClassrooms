@@ -4,6 +4,7 @@ import { FaceSnap } from "../models/face-snap.model";
 @Injectable({
   providedIn: 'root'
 })
+
 export class FaceSnapService {
 
   snaps: FaceSnap[] = [
@@ -13,14 +14,16 @@ export class FaceSnapService {
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,underwear'
+      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,underwear',
+      buttonSnap: "Snap!"
     }, {
       id: 2,
       title: 'Robe',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,dress'
+      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,dress',
+      buttonSnap: "Snap!"
     }, {
       id: 3,
       'title': 'Snowboard',
@@ -28,6 +31,7 @@ export class FaceSnapService {
       created_At: new Date(),
       snaps: 3,
       imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,heels',
+      buttonSnap: "Snap!",
       'location': 'Alpes'
     }, {
       id: 4,
@@ -35,14 +39,16 @@ export class FaceSnapService {
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,swimsuit'
+      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,swimsuit',
+      buttonSnap: "Snap!"
     }, {
       id: 5,
       title: 'Robe',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,car'
+      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,car',
+      buttonSnap: "Snap!"
     }, {
       id: 6,
       'title': 'Snowboard',
@@ -50,6 +56,7 @@ export class FaceSnapService {
       created_At: new Date(),
       snaps: 3,
       imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,snowboard',
+      buttonSnap: "Snap!",
       'location': 'Alpes'
     }
   ];
@@ -69,6 +76,7 @@ export class FaceSnapService {
 
   snapFaceSnapById(faceSnapId: number, snapType: string): void {
     const faceSnap = this.getFaceSnapById(faceSnapId);
+    console.log(faceSnap.snaps+" "+snapType);
     snapType === 'Snap!' ? faceSnap.snaps++ : faceSnap.snaps--;
   }
 }
