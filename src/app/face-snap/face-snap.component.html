@@ -1,6 +1,5 @@
 <div class="card height mx-2 text-center mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
   <h2 class="h4">{{ faceSnap.title | uppercase }}</h2>
-  <button class="btn btn-primary mb-1" (click)="onViewSnap()">Show</button>
   <button class="btn btn-primary mb-2" (click)="onSnapToggle()">{{ faceSnap.buttonSnap }}</button>
   <a routerLink="{{ faceSnap.id }}">
     <img [src]="faceSnap.imageURL" [alt]="faceSnap.title" class="img-fluid border border-5 rounded">

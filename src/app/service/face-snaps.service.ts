@@ -10,52 +10,52 @@ export class FaceSnapService {
   snaps: FaceSnap[] = [
     {
       id: 1,
-      title: 'Lingerie',
+      title: 'lingerie',
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,underwear',
+      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,nude',
       buttonSnap: "Snap!"
     }, {
       id: 2,
-      title: 'Robe',
+      title: 'swimsuit',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,dress',
+      imageURL: 'https://source.unsplash.com/random/100×100/?swimsuit,heels',
       buttonSnap: "Snap!"
     }, {
       id: 3,
-      'title': 'Snowboard',
+      'title': 'dress',
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,heels',
+      imageURL: 'https://source.unsplash.com/random/100×100/?dress,underwear',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }, {
       id: 4,
-      title: 'Lingerie',
+      title: 'heels',
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,swimsuit',
+      imageURL: 'https://source.unsplash.com/random/100×100/?heels,swimsuit',
       buttonSnap: "Snap!"
     }, {
       id: 5,
-      title: 'Robe',
+      title: 'underwear',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,car',
+      imageURL: 'https://source.unsplash.com/random/100×100/?underwear,dress',
       buttonSnap: "Snap!"
     }, {
       id: 6,
-      'title': 'Snowboard',
+      'title': 'sexy',
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,snowboard',
+      imageURL: 'https://source.unsplash.com/random/100×100/?nude,lingerie',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }

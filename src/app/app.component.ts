@@ -9,6 +9,7 @@ import { concatMap, mergeMap, delay, exhaustMap, map, switchMap, take, tap, filt
 })
 
 export class AppComponent implements OnInit {
+  'title' = "BeginAngular";
 
   redTrainsCalled = 0;
   yellowTrainsCalled = 0;
@@ -16,14 +17,15 @@ export class AppComponent implements OnInit {
   interval$!: Observable<string>;
 
   ngOnInit() {
+    /*
     interval(1000).pipe(
       take(10),
       map(value => value % 2 === 0 ? 'rouge' : 'jaune'),
       tap(color => console.log(`La lumière s'allume en %c${color}`, `color: ${this.translateColor(color)}`)),
-      mergeMap(color => this.getTrainObservable$(color)),
+      exhaustMap(color => this.getTrainObservable$(color)),
       tap(train => console.log(`Train %c${train.color} ${train.trainIndex} arrivé !`, `font-weight: bold; color: ${this.translateColor(train.color)}`))
     ).subscribe();
-
+    */
     /*
     this.interval$ = interval(100).pipe(
       filter(value => value % 3 === 0),
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit {
     /* setTimeout( () => {this.interval$.subscribe(value => console.log(value));}, 3000); */
   }
 
+  /*
   getTrainObservable$(color: 'rouge' | 'jaune') {
     const isRedTrain = color === 'rouge';
     isRedTrain ? this.redTrainsCalled++ : this.yellowTrainsCalled++;
@@ -47,4 +50,5 @@ export class AppComponent implements OnInit {
   translateColor(color: 'rouge' | 'jaune') {
     return color === 'rouge' ? 'red' : 'yellow';
   }
+  */
 }
