@@ -34,6 +34,10 @@ export class SingleFaceSnapComponent implements OnInit {
   onShowFaceSnaps() {
     this.router.navigateByUrl('facesnaps');
   }
+  
+  onShowPicture() {
+    this.router.navigateByUrl(`facesnaps/bigsnap/${this.faceSnap.id}`);
+  }
 
   ngOnInit(): void {
     const snapId = +this.route.snapshot.params['id'];

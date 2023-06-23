@@ -2,12 +2,21 @@
   <div class="row pt-5">
     <div class="col-4"></div>
     <div class="col-4 text-center btn btn-outline-dark btn-lg py-3" (click)="onShowFaceSnaps()">
-      <h2 class="text-center fw-bold">
+      <p class="h2 text-center fw-bold my-0">
         Show FaceSnaps
-      </h2>
+      </p>
     </div>
-    <div class="col-4"></div>
   </div>
+
+  <div class="row pt-5">
+    <div class="col-4"></div>
+    <div class="col-4 text-center btn btn-outline-dark btn-sm" (click)="onCreateFaceSnap()">
+      <p class="text-center fw-bold my-0">
+        Create FaceSnap
+      </p>
+    </div>
+  </div>
+
   <div class="row pt-5">
     <div class="col-4"></div>
     <div class="col-4">
@@ -15,7 +24,6 @@
         <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
         <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail" class="w-75">
         <button type="submit" class="w-25">OK!</button>
-
         <p>{{ userEmail }}</p>
       </form>
     </div>

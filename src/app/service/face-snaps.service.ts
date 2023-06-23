@@ -14,7 +14,7 @@ export class FaceSnapService {
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?lingerie,nude',
+      imageURL: 'lingerie,nude',
       buttonSnap: "Snap!"
     }, {
       id: 2,
@@ -22,7 +22,7 @@ export class FaceSnapService {
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?swimsuit,heels',
+      imageURL: 'swimsuit,heels',
       buttonSnap: "Snap!"
     }, {
       id: 3,
@@ -30,7 +30,7 @@ export class FaceSnapService {
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'https://source.unsplash.com/random/100×100/?dress,underwear',
+      imageURL: 'dress,underwear',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }, {
@@ -39,7 +39,7 @@ export class FaceSnapService {
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'https://source.unsplash.com/random/100×100/?heels,swimsuit',
+      imageURL: 'heels,swimsuit',
       buttonSnap: "Snap!"
     }, {
       id: 5,
@@ -47,7 +47,7 @@ export class FaceSnapService {
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'https://source.unsplash.com/random/100×100/?underwear,dress',
+      imageURL: 'underwear,dress',
       buttonSnap: "Snap!"
     }, {
       id: 6,
@@ -55,7 +55,7 @@ export class FaceSnapService {
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'https://source.unsplash.com/random/100×100/?nude,lingerie',
+      imageURL: 'nude,lingerie',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }

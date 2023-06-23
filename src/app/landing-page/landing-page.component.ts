@@ -20,6 +20,10 @@ export class LandingPageComponent implements OnInit {
     this.router.navigateByUrl('facesnaps');
   }
 
+  onCreateFaceSnap() {
+    this.router.navigateByUrl('create');
+  }
+
   onSubmitForm(form: NgForm): void {
     console.log(form.value);
   }
