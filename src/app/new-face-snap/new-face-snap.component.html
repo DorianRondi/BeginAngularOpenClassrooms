@@ -24,7 +24,7 @@
             <input id="location" type="text" formControlName="location">
           </div>
           <div class="action-buttons">
-            <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button>
           </div>
         </form>
       </div>
@@ -34,7 +34,7 @@
       <div class="card height mx-2 text-center mt-5 p-3" *ngIf="faceSnapPreview$ | async as faceSnap">
         <h2>{{ faceSnap.title | uppercase }}</h2>
         <p>Mis en ligne {{ faceSnap.created_At | date: 'à HH:mm, le d MMMM yyyy' }}</p>
-        <img [src]="'https://source.unsplash.com/random/?'+faceSnap.imageURL" [alt]="faceSnap.title"  class="img-fluid border border-5 rounded">
+        <img [src]="faceSnap.imageURL" [alt]="faceSnap.title"  class="img-fluid border border-5 rounded">
         <p>{{ faceSnap.description }}</p>
         <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
       </div>

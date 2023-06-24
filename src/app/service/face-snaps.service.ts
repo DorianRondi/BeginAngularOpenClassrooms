@@ -9,53 +9,53 @@ export class FaceSnapService {
 
   snaps: FaceSnap[] = [
     {
-      id: 1,
+      id: 0,
       title: 'lingerie',
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'lingerie,nude',
+      imageURL: 'https://source.unsplash.com/random/?lingerie,nude',
       buttonSnap: "Snap!"
     }, {
-      id: 2,
+      id: 1,
       title: 'swimsuit',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'swimsuit,heels',
+      imageURL: 'https://source.unsplash.com/random/?swimsuit,heels',
       buttonSnap: "Snap!"
     }, {
-      id: 3,
+      id: 2,
       'title': 'dress',
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'dress,underwear',
+      imageURL: 'https://source.unsplash.com/random/?dress,underwear',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }, {
-      id: 4,
+      id: 3,
       title: 'heels',
       description: "C'est sexy !",
       created_At: new Date(),
       snaps: 6,
-      imageURL: 'heels,swimsuit',
+      imageURL: 'https://source.unsplash.com/random/?heels,swimsuit',
       buttonSnap: "Snap!"
     }, {
-      id: 5,
+      id: 4,
       title: 'underwear',
       description: "C'est jolie !",
       created_At: new Date(),
       snaps: 0,
-      imageURL: 'underwear,dress',
+      imageURL: 'https://source.unsplash.com/random/?underwear,dress',
       buttonSnap: "Snap!"
     }, {
-      id: 6,
+      id: 5,
       'title': 'sexy',
       description: "C'est funky !",
       created_At: new Date(),
       snaps: 3,
-      imageURL: 'nude,lingerie',
+      imageURL: 'https://source.unsplash.com/random/?nude,lingerie',
       buttonSnap: "Snap!",
       'location': 'Alpes'
     }
@@ -79,4 +79,15 @@ export class FaceSnapService {
     console.log(faceSnap.snaps+" "+snapType);
     snapType === 'Snap!' ? faceSnap.snaps++ : faceSnap.snaps--;
   }
+
+  createFaceSnap(formValue: { title: string, description: string, imageURL: string, location?: string }) {
+        const faceSnap: FaceSnap = {
+            ...formValue,
+            snaps: 0,
+            created_At: new Date(),
+            id: this.snaps[this.snaps.length - 1].id + 1,
+            buttonSnap: "Snap!"
+        };
+        this.snaps.push(faceSnap);
+    }
 }
