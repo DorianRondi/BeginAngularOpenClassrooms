@@ -1,4 +1,4 @@
-<div class="card height mx-2 text-center mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
+<div class="card text-center shadow mx-2 mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
   <h2 class="h4">{{ faceSnap.title | uppercase }}</h2>
   <button class="btn btn-primary mb-2" (click)="onSnapToggle()">{{ faceSnap.buttonSnap }}</button>
   <a routerLink="{{ faceSnap.id }}">

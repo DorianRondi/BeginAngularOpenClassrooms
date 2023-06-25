@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <div class="card height mx-2 text-center mt-5 p-3">
+      <div class="card text-center shadow mx-2 mt-5 p-3" [ngClass]="{snapped : faceSnap.buttonSnap === 'unSnap!'}">
         <img [src]="faceSnap.imageURL" [alt]="faceSnap.title"  class="img-fluid border border-5 rounded" (click)="onViewSnap()">
       </div>
   </div>
